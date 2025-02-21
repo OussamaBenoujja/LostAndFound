@@ -10,6 +10,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('statistics', function (Blueprint $table) {
+            
             $table->id();
             $table->foreignId('listing_id')->constrained()->onDelete('cascade');
             $table->integer('views')->default(0);
@@ -22,4 +23,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('statistics');
     }
+
 };
